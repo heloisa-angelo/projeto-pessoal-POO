@@ -10,7 +10,6 @@ const tabela = new TabelaDeJogos();
 const cidades = [];
 const modalidades = [];
 
-// Função para criar cidades
 function criarCidades() {
   const n = parseInt(prompt('Quantas cidades participarão? '));
   for (let i = 0; i < n; i++) {
@@ -19,7 +18,6 @@ function criarCidades() {
   }
 }
 
-// Função para criar modalidades
 function criarModalidades() {
   const n = parseInt(prompt('Quantas modalidades serão? '));
   for (let i = 0; i < n; i++) {
@@ -28,7 +26,6 @@ function criarModalidades() {
   }
 }
 
-// Função para criar jogos
 function criarJogos() {
   const n = parseInt(prompt('Quantos jogos deseja cadastrar? '));
   for (let i = 0; i < n; i++) {
@@ -48,7 +45,6 @@ function criarJogos() {
     const idxModalidade = parseInt(prompt('Índice da modalidade: '));
 
     const dataHora = prompt('Data e hora do jogo (YYYY-MM-DD HH:mm): ');
-    // Convertendo para formato ISO
     const dataHoraISO = dataHora.replace(' ', 'T') + ':00';
 
     const jogo = new Jogo(cidades[idxCidade1], cidades[idxCidade2], modalidades[idxModalidade], dataHoraISO);
@@ -57,7 +53,6 @@ function criarJogos() {
   }
 }
 
-// Função para iniciar e finalizar jogos
 function atualizarJogos() {
   tabela.listarTodos().forEach((jogo, idx) => {
     console.log(`\nJogo ${idx}: ${jogo.cidade1.nome} x ${jogo.cidade2.nome} - Status: ${jogo.status}`);
@@ -84,7 +79,6 @@ function atualizarJogos() {
   }
 }
 
-// Mostrar resumo dos jogos
 function mostrarJogos() {
   console.log('\n=== Jogos Cadastrados ===');
 
@@ -110,3 +104,4 @@ function main() {
 }
 
 main();
+
